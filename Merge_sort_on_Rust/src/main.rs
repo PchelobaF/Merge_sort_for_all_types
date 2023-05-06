@@ -96,24 +96,29 @@ fn set_size_arr() -> usize {
         .trim()
         .parse()
         .expect("Invalid input; input must be a number");
-    println!("Массив заполнен {} элементами", number);
+    println!("Массив заполнен {} элементами\n", number);
     number
 }
 
 fn main() {
     let size = set_size_arr();
+
+    println!("Type int");
     let mut int_arr = vec![0; size];
     new_rand_arr(&mut int_arr, 0, std::i32::MAX);
     cycle_sort(&mut int_arr);
 
+    println!("Type float");
     let mut float_arr = vec![0.0; size];
     new_rand_arr(&mut float_arr, 0.0, std::f32::MAX);
     cycle_sort(&mut float_arr);
 
+    println!("Type double");
     let mut double_arr = vec![0.0; size];
     new_rand_arr(&mut double_arr, 0.0, std::f64::MAX);
     cycle_sort(&mut double_arr);
 
+    println!("Type string");
     let mut string_arr = generate_string_arr(size);
     cycle_sort(&mut string_arr);
             
